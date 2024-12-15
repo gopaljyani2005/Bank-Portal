@@ -26,7 +26,7 @@ export default function SignIn() {
             name:name,
         };
 
-        const response = await fetch('http://localhost:3000/api/addaccount', {
+        const response = await fetch('/api/addaccount', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export default function SignIn() {
 
         if (response.status === 200) {
             try {
-                const response = await fetch("http://localhost:3000/api/sendmailaccountdetail", {
+                const response = await fetch("/api/sendmailaccountdetail", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",

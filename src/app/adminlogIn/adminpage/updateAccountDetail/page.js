@@ -19,7 +19,7 @@ export default function updateAccountDetail(){
     async function getdata(e) {
         e.preventDefault();
         const data = await fetch(
-          `http://localhost:3000/api/addaccount/${accountNumber}`
+          `/api/addaccount/${accountNumber}`
         );
         if (data.status === 200) {
           const userdata = await data.json();
@@ -42,7 +42,7 @@ export default function updateAccountDetail(){
           };
     
           const response = await fetch(
-            `http://localhost:3000/api/addaccount/${accountNumber}`,
+            `/api/addaccount/${accountNumber}`,
             {
               method: "PUT",
               headers: {

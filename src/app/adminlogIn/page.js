@@ -18,7 +18,7 @@ export default function () {
         email: "jyanigopalaram@gmail.com",
       };
 
-      const response = await fetch("http://localhost:3000/api/emailSend", {
+      const response = await fetch("/api/emailSend", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -31,11 +31,11 @@ export default function addBalance() {
   async function sendmoney(e) {
     e.preventDefault();
     let senderresponse = await fetch(
-      `http://localhost:3000/api/addaccount/${senderAccountNumber}`
+      `/api/addaccount/${senderAccountNumber}`
     );
     setsenderData(await senderresponse.json());
     const reciverDatapro = await fetch(
-      `http://localhost:3000/api/addaccount/${reciveraccountNumber}`
+      `/api/addaccount/${reciveraccountNumber}`
     );
     setreciverData(await reciverDatapro.json());
 
@@ -56,7 +56,7 @@ export default function addBalance() {
         };
 
         const response = await fetch(
-          "http://localhost:3000/api/TransactionApi",
+          "/api/TransactionApi",
           {
             method: "PUT",
             headers: {

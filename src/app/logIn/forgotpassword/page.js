@@ -19,7 +19,7 @@ export default function PasswordReset() {
   const [section3, setsection3] = useState(false);
   async function accountverify(e) {
     e.preventDefault();
-    const userData = await fetch(`http://localhost:3000/api/addaccount/${accountNumber}`);
+    const userData = await fetch(`/api/addaccount/${accountNumber}`);
     if (userData.status === 200) {
       const result = await userData.json();
       const e = result["email"];
@@ -29,7 +29,7 @@ export default function PasswordReset() {
           email: e,
         };
 
-        const response = await fetch("http://localhost:3000/api/emailSend", {
+        const response = await fetch("/api/emailSend", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export default function PasswordReset() {
       };
 
       const response = await fetch(
-        `http://localhost:3000/api/addaccount/${accountNumber}`,
+        `/api/addaccount/${accountNumber}`,
         {
           method: "PUT",
           headers: {

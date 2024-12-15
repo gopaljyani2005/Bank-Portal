@@ -12,7 +12,7 @@ export default function deleteacount() {
   async function deleteacount(e) {
     e.preventDefault();
     const response = await fetch(
-      `http://localhost:3000/api/addaccount/${accountNumber}`,
+      `/api/addaccount/${accountNumber}`,
       {
         method: "DELETE",
       }
