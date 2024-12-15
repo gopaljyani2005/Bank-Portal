@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "../../style/form.module.css";
-import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 
 export default function OTPVerification() {
@@ -9,7 +8,6 @@ export default function OTPVerification() {
   const [sendotp, setSendOtp] = useState("");
 
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   const [userData, setUserData] = useState("");
 
@@ -53,7 +51,6 @@ export default function OTPVerification() {
 
   function handleCheck(e) {
     e.preventDefault();
-    console.log("Entered OTP:", otp, "Sent OTP:", sendotp);
     sessionStorage.setItem('userData', JSON.stringify(userData));
     if (otp === sendotp) {
       alert("OTP Verified Successfully!");

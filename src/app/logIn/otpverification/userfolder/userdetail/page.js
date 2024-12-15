@@ -11,7 +11,6 @@ export default function userdetail() {
       setUserData(JSON.parse(storedData));
     }
   }, []);
-  console.log(userData);
   return (
     <main>
       <div className="ud">
