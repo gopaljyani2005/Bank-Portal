@@ -1,0 +1,34 @@
+/* Center the login links and add spacing between them */
+.login {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 200px; /* Optional, adds spacing from top */
+  }
+  
+  /* Style for the buttons */
+  .btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background-color: #d18d4f; /* Custom background color */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for the buttons */
+  .btn:hover {
+    background-color:blue; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight scale-up effect */
+  }
+  
+  /* Focus effect (for accessibility) */
+  .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(209, 141, 79, 0.5); /* Adds a glow around the button */
+  }
+  

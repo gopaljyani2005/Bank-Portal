@@ -1,0 +1,31 @@
+.form {
+    display: flex;
+    justify-content: center; /* Horizontally centers the buttons */
+    align-items: center; /* Vertically centers the buttons */
+    gap: 50px; /* Adds spacing between buttons */
+    padding: 20px; /* Adds some padding around the form */
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    height: 100vh; /* Makes the container full height to center in the viewport */
+  }
+  
+  .btn {
+    padding: 10px 20px; /* Adds space inside the button */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* White text */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    font-size: 16px; /* Adjusts font size */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+  }
+  
+  .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .btn:active {
+    background-color: #003f7f; /* Even darker blue when clicked */
+  }
+  

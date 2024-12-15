@@ -1,0 +1,25 @@
+/* deleteaccount.module.css */
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+  }
+  
+  .info p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .link {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  .link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
