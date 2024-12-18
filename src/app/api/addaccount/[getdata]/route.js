@@ -34,7 +34,7 @@ export async function PUT(request) {
   );
   if (updatedetail) {
     return NextResponse.json(
-      { message: "successfully update your password" },
+      updatedetail,
       { status: 200 }
     );
   } else {

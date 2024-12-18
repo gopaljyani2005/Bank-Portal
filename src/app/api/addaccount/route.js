@@ -4,7 +4,7 @@ import url from "@/lib/dataurl";
 import { NextResponse } from "next/server";
 
 export async function GET(){
-    await mongoose.connect(url);
+    await mongoose.connect(url); 
     const data = await usertable.find();
     return NextResponse.json(data,{status:200});
 }

@@ -23,7 +23,7 @@ export default function adminpage(){
     }
 
     function depositfunct(){
-        router.push(`/adminlogIn/adminpage/Accountdetail`);
+        router.push(`/adminlogIn/adminpage/depositmoney`);
     }
 
     function detailfunct(){
