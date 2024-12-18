@@ -1,4 +1,6 @@
-# 🌟 Bank Management System 🌟
+<div align="center">
+  <h2> 🌟 Bank Management System 🌟</h2>
+</div>
 
 ## A Web-Based **Bank Management System** for **Users** and **Admins**
 
@@ -18,19 +20,31 @@
 
 ### 📸 **Project Screenshots**
 
-#### Login Page
 
-<p align="center">
-  <img src="https://github.com/gopaljyani2005/Bank-Portal/blob/main/public/image/admin_login.png" alt="Admin Login Screenshot" width="500" style="border: 2px solid #32CD32; border-radius: 10px;">
-  <img src="https://github.com/gopaljyani2005/Bank-Portal/blob/main/public/image/users_login.png" alt="User Login Screenshot" width="500" style="border: 2px solid #32CD32; border-radius: 10px;">
-</p>
+<div align="center">
+  <h2>Admin Login Page</h2>
+    <img src="https://github.com/gopaljyani2005/Bank-Portal/blob/main/public/image/admin_login.png" alt="Admin Login Screenshot" width="600" style="border: 2px solid #32CD32; border-radius: 10px;">
+</div>
 
-#### Project Features
 
-<p align="center">
-  <img src="https://github.com/gopaljyani2005/Bank-Portal/blob/main/public/image/admin_feature.png" alt="Admin Features Screenshot" width="500" style="border: 2px solid #FF4500; border-radius: 10px;">
-  <img src="https://github.com/gopaljyani2005/Bank-Portal/blob/main/public/image/users_feature.png" alt="User Features Screenshot" width="500" style="border: 2px solid #FF4500; border-radius: 10px;">
-</p>
+<div align="center">
+  <h2>Users Login Page</h2>
+    <img src="https://github.com/gopaljyani2005/Bank-Portal/blob/main/public/image/users_login.png" alt="User Login Screenshot" width="600" style="border: 2px solid #32CD32; border-radius: 10px;">
+</div>
+
+
+
+<div align="center">
+  <h2>Admin Features</h2>
+    <img src="https://github.com/gopaljyani2005/Bank-Portal/blob/main/public/image/admin_feature.png" alt="Admin Features Screenshot" width="600" style="border: 2px solid #FF4500; border-radius: 10px;">
+</div>
+
+
+<div align="center">
+  <h2>Users Features</h2>
+      <img src="https://github.com/gopaljyani2005/Bank-Portal/blob/main/public/image/users_feature.png" alt="User Features Screenshot" width="600" style="border: 2px solid #FF4500; border-radius: 10px;">
+</div>
+
 
 ---
 
