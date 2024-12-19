@@ -156,6 +156,52 @@ We welcome contributions! Fork the repository and create a pull request with you
 
 ---
 
+<body>
+    <h1>Folder Structure</h1>
+    <p>This project follows the folder structure outlined below:</p>
+    <pre>
+<code>src/
+├── app/
+│   ├── about/
+│   ├── adminlogin/
+|   |       └── adminpage/
+│   │                 ├── Accountdetail/
+│   │                 ├── createaccount/
+│   │                 ├── deleteaccount/
+│   │                 ├── depositmoney/
+│   │                 |── updateAccountDetail/
+│   │                 
+│   ├── api/
+│   │   ├── addaccount/
+|   |   |           └── [getdata]
+│   │   ├── emailSend/
+│   │   ├── MOBILEOTP/
+│   │   ├── sendmailaccountdetail/
+│   │   |── TransactionApi/
+|   |
+│   ├── login/
+│   │   ├── forgotpassword/
+│   │   └── otpverification/
+│   │             └── userfolder/
+│   │                    ├── sendmoney/
+│   │                    ├── userdetail/
+|   ├── services/
+|   ├── style/
+│   ├── favicon.ico
+│   ├── globals.css
+|   ├── page.js
+│   └── layout.js
+├── Components
+├── lib/
+|     └── DBmodel/
+|  
+└── middleware.js
+</code>
+    </pre>
+</body>
+
+----
+
 ### 📧 **Contact Information**
 
 If you have any questions or need further assistance, feel free to reach out:
@@ -164,4 +210,4 @@ If you have any questions or need further assistance, feel free to reach out:
 - **LinkedIn**: [Gopala Ram Jyani](https://www.linkedin.com/in/gopala-ram-jyani-1734b4274/)
 - **GitHub**: [Gopaljyani2005](https://github.com/gopaljyani2005/)
 
--------------------------
+---
