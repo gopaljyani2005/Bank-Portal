@@ -112,6 +112,7 @@ https://gopalaramjyanibankportal-lsk944v5q-gopalaram.vercel.app/
     PASS_WORD=YourDBPassword
     USER_EMAIL=YourEmail
     EMAIL_PASSWORD=YourAppPassword
+    JWT_SECRET_KEY = BXXMEXX
     ```
 
 4. **Run the Project Locally**:
@@ -126,12 +127,17 @@ https://gopalaramjyanibankportal-lsk944v5q-gopalaram.vercel.app/
 | **METHOD** | **ROUTE**                  | **FUNCTIONALITY**                              | **ACCESS**               |
 |------------|----------------------------|------------------------------------------------|--------------------------|
 | POST       | `/api/addaccount/`          | Create a new account                          | Bank Manager             |
+|  GET      | `/api/logIn/`                | User login your account                       | Users                    |
 | GET        | `/api/addaccount/`          | Get account details                           | Bank Manager, Users      |
 | DELETE     | `/api/addaccount/`          | Delete an account                             | Bank Manager             |
-| PUT        | `/api/addaccount/[addaccount]`| Update user details                           | Bank Manager             |
+| PUT        | `/api/addaccount/[addaccount]`| Update user details                         | Bank Manager             |
 | POST       | `/api/emailSend/`           | Send OTP, account number, and password        | Auto Send                |
 | POST       | `/api/TransactionApi/`      | Transfer money to other bank users            | Bank Manager, Users      |
 | POST       | `/api/MOBILEOTP/`           | Send OTP to a mobile number                   | Bank Manager             |
+| POST       | `/api/userlogout/`          | Logout Users from your account                | Users                    |
+| POST       | `/api/adminlogout/`         | Logout Bank Manager from your Branch          | Bank Manager             |
+| GET        | `/api/cookieData/`          | Get stored data in the cookies from backend   | Bank Manager ,Users      |
+
 
 ---
 
@@ -170,14 +176,20 @@ We welcome contributions! Fork the repository and create a pull request with you
 │   │                 ├── deleteaccount/
 │   │                 ├── depositmoney/
 │   │                 |── updateAccountDetail/
+|   |                 |── withdrawal/
 │   │                 
 │   ├── api/
 │   │   ├── addaccount/
 |   |   |           └── [getdata]
+│   │   ├── logIn/
+|   |   |           └── [logIn]  
 │   │   ├── emailSend/
 │   │   ├── MOBILEOTP/
 │   │   ├── sendmailaccountdetail/
 │   │   |── TransactionApi/
+│   │   |── cookieData/
+│   │   |── userlogout/
+│   │   |── adminlogout/  
 |   |
 │   ├── login/
 │   │   ├── forgotpassword/
@@ -194,6 +206,8 @@ We welcome contributions! Fork the repository and create a pull request with you
 ├── Components
 ├── lib/
 |     └── DBmodel/
+├── utils/
+|     └── token.js
 |  
 └── middleware.js
 </code>
