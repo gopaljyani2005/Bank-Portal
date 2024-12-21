@@ -1,0 +1,35 @@
+.mainStyle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px;
+}
+
+.buttonStyle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* padding: 10px 10px; */
+    background-color: rgb(214, 208, 208);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+
+
+.buttonStyle:hover {
+    background-color:rgb(29, 171, 24); /* Darker shade on hover */
+    transform: scale(1.05); /* Slight scale-up effect */
+  }
+  
+  /* Focus effect (for accessibility) */
+  .buttonStyle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(209, 141, 79, 0.5); /* Adds a glow around the button */
+  }
+  

@@ -26,9 +26,9 @@ export default function deposit() {
     }
   }
 
-  async function depositmoney(e) {
+  async function Withdrawalmoney(e) {
     e.preventDefault();
-    const balance = Number(amount) + Number(userdata["balance"]);
+    const balance = Number(userdata["balance"]) -Number(amount);
     const userupdateData = {
       balance: balance.toString(),
     };
@@ -45,7 +45,7 @@ export default function deposit() {
       setsection2(false);
       setsection3(true);
     } else {
-      alert("deposit error");
+      alert("Withdrawal error");
       router.push("/adminlogIn/adminpage");
     }
   }
@@ -54,7 +54,7 @@ export default function deposit() {
     <main>
       {section1 && (
         <div className={styles.page}>
-          <h1>Money Deposit Portal</h1>
+          <h1>Money Withdrawal Portal</h1>
           <form className={styles.form} onSubmit={usercheak}>
             <label htmlFor="accountNumber">Account Number</label>
             <input
@@ -75,7 +75,7 @@ export default function deposit() {
         <div className={styles.page}>
           <h2>Account Holder Name</h2>
           <h3>{userdata["name"]}</h3>
-          <form className={styles.form} onSubmit={depositmoney}>
+          <form className={styles.form} onSubmit={Withdrawalmoney}>
             <label htmlFor="amount">Amount</label>
             <input
               type="Number"
@@ -86,13 +86,13 @@ export default function deposit() {
               value={amount}
               onChange={(e) => setamount(e.target.value)}
             />
-            <button type="submit">Deposit</button>
+            <button type="submit">Withdrawal</button>
           </form>
         </div>
       )}
       {section3 && (
         <div>
-          <h1>Successfully Deposit Your money</h1>
+          <h1>Successfully Withdrawal Your money</h1>
           <h3>Current Payment :-{userdata.balance}</h3>
           <Link href="/adminlogIn/adminpage">Dashboard</Link>
         </div>

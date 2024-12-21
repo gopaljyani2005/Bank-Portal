@@ -7,14 +7,7 @@ export async function GET(request) {
   const arr = request.url.split("/");
   const account_number = arr[arr.length - 1];
   await mongoose.connect(url);
-  const data = await usertable.find();
-  let userdata = [];
-  for (let user of data) {
-    if (user["accountNumber"] === account_number) {
-      userdata = user;
-      break;
-    }
-  }
+  const userdata = await usertable.findOne({accountNumber:account_number});
   if (userdata.length === 0) {
     return NextResponse.json(userdata, { status: 404 });
   } else {

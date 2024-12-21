@@ -5,6 +5,7 @@ import styles from "../../../../style/successfullPay.module.css"
 import styles1 from "../../../../style/form.module.css";
 import { useState, useEffect } from "react";
 import { toWords } from "number-to-words";
+import Link from "next/link";
 
 
 export default function addBalance() {
@@ -20,10 +21,23 @@ export default function addBalance() {
   const [senderData,setsenderData] = useState("");
 
   useEffect(() => {
-    const storedData = sessionStorage.getItem("userData");
-    if (storedData) {
-      setUserData(JSON.parse(storedData));
+    // fetch data using api
+    async function fetchUserData(){
+      let response = await fetch(`/api/cookieData`, {
+        method: "GET",
+        credentials: "same-origin",
+      });
+      const result = await response.json();
+      const account_number = result.payload.accountNumber;
+      const data = await fetch(`/api/addaccount/${account_number}`);
+      if (data.status === 200) {
+        const userdata = await data.json();
+        setUserData(userdata);
+      }
     }
+
+    fetchUserData();
+    
   }, []);
 
   const senderAccountNumber = userData?.accountNumber;
@@ -143,6 +157,7 @@ export default function addBalance() {
         <h6 className={styles.accountNumber}>{senderAccountNumber}</h6>
         <h6 className={styles.nameTitle}>Bank Name</h6>
       </div>
+      <Link href="/logIn/otpverification/userfolder">dashboard</Link>
     </div>
         )
       }

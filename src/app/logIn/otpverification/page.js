@@ -4,36 +4,38 @@ import styles from "../../style/form.module.css";
 import { useRouter } from "next/navigation";
 
 export default function OTPVerification() {
-  const [otp, setOtp] = useState("");
-  const [sendotp, setSendOtp] = useState("");
-
   const router = useRouter();
 
-  const [userData, setUserData] = useState("");
+  const [otp, setOtp] = useState("");
+  const [sendotp, setSendOtp] = useState("");
+  const [userData, setuserData] = useState("");
 
+  // data fetching from backend using api
   useEffect(() => {
-    // Retrieve data from sessionStorage
-    const storedData = sessionStorage.getItem("userData");
-    if (storedData) {
-      setUserData(JSON.parse(storedData));
+    async function fetchUserData() {
+      const response = await fetch(`/api/cookieData`, {
+        method: "GET",
+        credentials: "same-origin",
+      });
+      let result = await response.json();
+      setuserData(result.payload);
     }
+    fetchUserData();
   }, []);
-
   const email = userData?.email;
-  const accountNumber = userData?.accountNumber;
 
+  // function call for sending otp to verify account 
   async function getoptmfunct() {
     try {
-      const userData = {
-        email: email,
+      const emailData = {
+        email: userData.email,
       };
-
       const response = await fetch("/api/emailSend", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(userData),
+        body: JSON.stringify(emailData),
       });
 
       if (response.status === 200) {
@@ -49,9 +51,11 @@ export default function OTPVerification() {
     }
   }
 
+
+  // sending otp verification and move next page;
   function handleCheck(e) {
     e.preventDefault();
-    sessionStorage.setItem('userData', JSON.stringify(userData));
+    sessionStorage.setItem("userData", JSON.stringify(userData));
     if (otp === sendotp) {
       alert("OTP Verified Successfully!");
       router.push("/logIn/otpverification/userfolder");

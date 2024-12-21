@@ -10,16 +10,25 @@ export default function LoginPage() {
     const [accountNumber, setAccountNumber] = useState("");
     const [password, setPassword] = useState("");
 
-    async function checkFunction(e) {
+    async function loginfunct(e) {
         e.preventDefault();
-
         try {
-            const response = await fetch(`/api/addaccount/${accountNumber}`); // Use relative path
-            if (response.status === 200) {
-                const userData = await response.json();
-                sessionStorage.setItem('userData', JSON.stringify(userData));
+            const response = await fetch(`/api/logIn/${accountNumber}` ,{
+                method:"GET",
+                headers:{
+                    "content-type": "application/json",
+                },
+                
+            });
+            const sendpassword = (await response.json()).password; 
+            if (response.status === 200 && password === sendpassword ) {
                 router.push(`/logIn/otpverification`);
-            } else {
+            }
+            else if(password != sendpassword){
+                alert("incorrect password");
+                setPassword("");
+            } 
+            else {
                 router.push('/usernotfind');
             }
         } catch (error) {
@@ -31,7 +40,7 @@ export default function LoginPage() {
     return (
         <main className={styles.page}>
             <h1>Login</h1>
-            <form className={styles.form} onSubmit={checkFunction}>
+            <form className={styles.form} onSubmit={loginfunct}>
                 <label htmlFor="Account Number">Account Number</label>
                 <input
                     type="text"

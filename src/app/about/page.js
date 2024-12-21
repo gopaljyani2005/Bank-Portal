@@ -39,7 +39,6 @@ export default function About() {
         <p>
           <strong>Email:</strong> b22me075@iij.ac.in<br />
           <strong>Phone:</strong> 9571356823<br />
-          <strong>Address:</strong> 123 Finance Street, City, State, 12345
         </p>
       </section>
     </main>

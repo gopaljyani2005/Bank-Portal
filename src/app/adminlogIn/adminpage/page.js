@@ -19,7 +19,7 @@ export default function adminpage(){
     }
 
     function withdrawalfunct(){
-        console.log("insider the withdrawal function");
+        router.push('/adminlogIn/adminpage/withdrawal');
     }
 
     function depositfunct(){

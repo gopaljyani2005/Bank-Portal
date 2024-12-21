@@ -1,23 +1,11 @@
 "use client";
-
 import Link from "next/link";
-import "./styles.css"
+import st from "../../../style/Home.module.css";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState,useEffect } from "react"; 
 export default function userdetail() {
   const router = useRouter();
-  const [userData, setUserData] = useState("");
-
-    useEffect(() => {
-      // Retrieve data from sessionStorage
-      const storedData = sessionStorage.getItem("userData");
-      if (storedData) {
-        setUserData(JSON.parse(storedData));
-      }
-    }, []);
-    
-
   function funct1(){
     router.push(`/logIn/otpverification/userfolder/userdetail`)
   }
@@ -27,9 +15,9 @@ export default function userdetail() {
   
   
   return (
-    <div className="form">
-      <button onClick={funct1} className="btn">Account</button>
-      <button onClick={funct2} className="btn">Pay</button>
+    <div className={st.login}>
+      <button onClick={funct1} className={st.btn}>Account</button>
+      <button onClick={funct2} className={st.btn}>Pay</button>
       
     </div>
   );

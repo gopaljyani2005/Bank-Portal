@@ -5,11 +5,20 @@ export default function userdetail() {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    // Retrieve data from sessionStorage
-    const storedData = sessionStorage.getItem("userData");
-    if (storedData) {
-      setUserData(JSON.parse(storedData));
+    async function fetchUserData(){
+      let response = await fetch(`/api/cookieData`, {
+        method: "GET",
+        credentials: "same-origin",
+      });
+      const result = await response.json();
+      const account_number = result.payload.accountNumber;
+      const data = await fetch(`/api/addaccount/${account_number}`);
+      if (data.status === 200) {
+        const userdata = await data.json();
+        setUserData(userdata);
+      }
     }
+    fetchUserData();
   }, []);
   return (
     <main>

@@ -29,9 +29,9 @@ export default function () {
       if (response.status === 200) {
         const responseData = await response.json();
         setsendotp(responseData.sendotp);
-        alert("OTP sent successfully to your email!");
+        alert("Password sent successfully to your email jyanigopalaram@gmail.com!");
       } else {
-        alert("Failed to send OTP. Please try again.");
+        alert("Failed to send Password. Please try again.");
       }
     } catch (error) {
       console.error("Error sending OTP:", error);
@@ -42,7 +42,18 @@ export default function () {
   async function cheakfunction(e) {
     e.preventDefault();
     if(password===sendotp){
-        router.push('/adminlogIn/adminpage');
+      // Function to set cookies in the browser
+      const setCookie = (name, value, days) => {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Expiration date
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = `${name}=${value}; ${expires}; path=/; Secure; SameSite=Lax`;
+       };
+
+      // Set a cookie when the page is loaded or on some event
+      setCookie('adminflag', true, 1); // Cookie expires in 7 days
+
+      router.push('/adminlogIn/adminpage');
     }
     else{
         alert("Enter the correct OTP.!");
